@@ -1,0 +1,169 @@
+body{
+	background: black ;
+	color: white;
+	font-family: Courier New, Georgia, Arial;   /* шрифты и fallback */
+}
+
+.container{
+	display: grid;
+	grid-template-columns: 200px 1fr 200px; /* значения для столбцов */
+	grid-template-rows: 70px 1fr 70px;  /* значения для строк */
+	grid-template-areas:              /*  задаем расположение элементов */
+		"left header right"
+		"left center right"
+		"left footer right"
+	;
+	height: 100%;
+	gap: 5px;   /* задает пространство между элементами */
+	place-items: top;
+}
+
+.container div{
+	
+	gap: 20px;
+}
+
+.header{
+	grid-area: header;
+	text-align: center;
+	color: limegreen;
+	
+}
+.left{
+	grid-area: left;
+
+	background: url("img/testL2.png") no-repeat center/cover; 
+}
+
+/* анимация для левого блока */
+
+
+
+
+.center{
+	grid-area: center;
+	text-align: center;
+	background-color: black;
+	border-radius: 5px;
+	/*box-shadow: 0px 0px 100px rgba(111, 111, 111, 0.5); */
+	color: limegreen;
+}
+.right{
+	grid-area: right;
+
+	background: url("img/testL2.png") no-repeat center/cover; 
+}
+.footer{
+	grid-area: footer;
+	text-align: center;
+	color: limegreen;
+}
+
+
+/* анимация для картинки в header */
+
+.slide-In{
+	opacity: 0;
+	transform: translateY(-100%);
+	animation: slideIN 1.5s ease forwards;   /* используем нашу анимацию, даем параметр длительности 1.5с, тип плавности ease
+	 и forwards - сохраняет конечное состояние картинки после анимации, что бы потом не повторялось.*/
+}
+
+@keyframes slideIN{
+	from { opacity: 0; transform: translateY(-100%); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* анимация для картинки в footer */
+
+.offOn{
+	opacity: 0;
+	animation: off-on 1.5s ease forwards;
+}
+
+@keyframes off-on{
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.head_img{                      /* класс для картинки в header */
+	user-select: none;
+}
+
+
+.par_img {                 /* класс с параметрами для картинки */
+	height: 50%;
+	width: auto;
+	user-select: none;  /* запрещает пользователю выделять картинку */
+}
+
+
+/* стили для плашек details/summary */
+
+/* плашка */
+.info-panel{
+	background: #0f0f0f;
+	color: green;
+	width: 300px;
+	height: 50px;
+	align-content: center;
+	
+	margin-top: 30px;
+	border-radius: 0px 0px 0px 0px;
+}
+.info-panel:hover{
+	background: #0f0f0f;
+	cursor: pointer;
+	border: 2px solid limegreen;     /* создает границы: размер, стиль, цвет */
+	color: limegreen;
+}
+
+.info-panel:active{
+	
+}
+
+/* параметры для details */
+.details-panel{
+	width: 300px;
+	height: 50px;
+
+}
+
+
+
+/* стиль кнопки для ссылки */
+.btn-panel{
+	display: inline-block;  /* делает ссылку в блочный элемент */
+	background: #0f0f0f;
+	color: limegreen;
+	width: 300px;
+	height: 50px;
+	align-content: center;
+
+
+}
+.btn-panel:hover{
+	background: #0f0f0f;
+	cursor: pointer;
+	border: 2px dashed limegreen;
+}
+
+/* выравнивание плашек details */
+.row{
+	display: flex;
+	justify-content: space-between;
+}
+
+.textAlign{
+	display: inline-block;  /* делает ссылку в блочный элемент */
+	background: #0f0f0f;
+	color: limegreen;
+	width: 300px;
+	height: 50px;
+	align-content: center;
+
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
